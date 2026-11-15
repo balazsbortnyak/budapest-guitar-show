@@ -169,6 +169,8 @@ export interface Media {
    * Fekete réteg a kép felett, hogy a rajta lévő szöveg olvasható legyen. 0 = nincs sötétítés, 90 = majdnem fekete. Csak ott jelenik meg, ahol szöveg van a képen (hero, programkártyák, kiemelés).
    */
   overlay?: number | null;
+  prefix?: string | null;
+  _objectKey?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -374,6 +376,8 @@ export interface ExhibitorApplication {
 export interface ApplicationDocument {
   id: number;
   title?: string | null;
+  prefix?: string | null;
+  _objectKey?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -393,6 +397,8 @@ export interface ApplicationDocument {
 export interface ApplicationLogo {
   id: number;
   alt?: string | null;
+  prefix?: string | null;
+  _objectKey?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -616,6 +622,8 @@ export interface FaqsSelect<T extends boolean = true> {
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
   overlay?: T;
+  prefix?: T;
+  _objectKey?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
@@ -733,6 +741,8 @@ export interface ExhibitorApplicationsSelect<T extends boolean = true> {
  */
 export interface ApplicationLogosSelect<T extends boolean = true> {
   alt?: T;
+  prefix?: T;
+  _objectKey?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
@@ -751,6 +761,8 @@ export interface ApplicationLogosSelect<T extends boolean = true> {
  */
 export interface ApplicationDocumentsSelect<T extends boolean = true> {
   title?: T;
+  prefix?: T;
+  _objectKey?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;

@@ -1,0 +1,21 @@
+import { MigrateUpArgs, MigrateDownArgs, sql } from '@payloadcms/db-postgres'
+
+export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
+  await db.execute(sql`
+   ALTER TABLE "media" ADD COLUMN "prefix" varchar DEFAULT '';
+  ALTER TABLE "media" ADD COLUMN "_objectkey" varchar;
+  ALTER TABLE "application_logos" ADD COLUMN "prefix" varchar DEFAULT '';
+  ALTER TABLE "application_logos" ADD COLUMN "_objectkey" varchar;
+  ALTER TABLE "application_documents" ADD COLUMN "prefix" varchar DEFAULT '';
+  ALTER TABLE "application_documents" ADD COLUMN "_objectkey" varchar;`)
+}
+
+export async function down({ db, payload, req }: MigrateDownArgs): Promise<void> {
+  await db.execute(sql`
+   ALTER TABLE "media" DROP COLUMN "prefix";
+  ALTER TABLE "media" DROP COLUMN "_objectkey";
+  ALTER TABLE "application_logos" DROP COLUMN "prefix";
+  ALTER TABLE "application_logos" DROP COLUMN "_objectkey";
+  ALTER TABLE "application_documents" DROP COLUMN "prefix";
+  ALTER TABLE "application_documents" DROP COLUMN "_objectkey";`)
+}

@@ -105,6 +105,8 @@ export default buildConfig({
     // Éles környezetben (Vercel) a képek a Vercel Blob tárhelyre kerülnek.
     vercelBlobStorage({
       enabled: Boolean(process.env.BLOB_READ_WRITE_TOKEN),
+      // A séma ne függjön attól, be van-e állítva a token (helyben nincs, élesben van).
+      alwaysInsertFields: true,
       collections: { media: true },
       token: process.env.BLOB_READ_WRITE_TOKEN || '',
     }),
@@ -112,6 +114,8 @@ export default buildConfig({
     // a Blobon pedig véletlen utótagot kapnak, így a közvetlen cím nem kitalálható.
     vercelBlobStorage({
       enabled: Boolean(process.env.BLOB_READ_WRITE_TOKEN),
+      // A séma ne függjön attól, be van-e állítva a token (helyben nincs, élesben van).
+      alwaysInsertFields: true,
       collections: { 'application-logos': true, 'application-documents': true },
       addRandomSuffix: true,
       token: process.env.BLOB_READ_WRITE_TOKEN || '',
