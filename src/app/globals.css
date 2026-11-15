@@ -1,0 +1,134 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-ink: #010103;
+  --color-surface: #121216;
+  --color-surface-2: #16161b;
+  --color-raised: #1c1c21;
+  --color-line: #222228;
+  --color-silver: #d3d3d3;
+  --color-muted: #a3a3a8;
+  --color-faint: #8a8a8f;
+  --color-graphite: #575757;
+  /* A mostani budapestguitarshow.com színei */
+  --color-accent: #e33500;
+  --color-accent-strong: #d13100;
+  --color-gold: #fed450;
+  --color-sand: #b49577;
+  /* Logó narancs – gombok hover színe */
+  --color-orange: #ff6a00;
+
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background: var(--color-ink);
+  }
+  body {
+    @apply bg-ink font-sans text-white antialiased;
+  }
+  ::selection {
+    background: var(--color-accent);
+    color: #fff;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+  }
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility tracking-display {
+  letter-spacing: -0.045em;
+}
+
+/* ============ Animációk ============
+ * Betöltés: .anim-* osztályok (CSS keyframe-ek, --delay változóval lépcsőzhető).
+ * Görgetés: [data-reveal] elemek – a RevealObserver adja hozzá az .is-visible osztályt,
+ * amikor a képernyőre érnek. Csak akkor rejt el bármit, ha fut JS (html.js),
+ * és teljesen kikapcsol, ha a felhasználó csökkentett mozgást kér.
+ */
+@keyframes rise {
+  from { opacity: 0; translate: 0 28px; }
+  to { opacity: 1; translate: 0 0; }
+}
+@keyframes hero-zoom {
+  from { scale: 1.12; }
+  to { scale: 1; }
+}
+/* Csak opacity: a transform a fix fejlécben megtörné a mobilmenü fix pozicionálását. */
+@keyframes nav-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .anim-rise {
+    animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    animation-delay: var(--delay, 0ms);
+  }
+  .anim-hero-zoom {
+    animation: hero-zoom 2.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  .anim-nav {
+    animation: nav-in 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) 0.15s both;
+  }
+
+  .js [data-reveal] {
+    transition:
+      opacity 0.9s cubic-bezier(0.2, 0.7, 0.2, 1),
+      translate 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+    transition-delay: var(--delay, 0ms);
+  }
+  .js [data-reveal]:not(.is-visible) {
+    opacity: 0;
+    translate: 0 40px;
+  }
+  .js [data-reveal='fade']:not(.is-visible) {
+    translate: none;
+  }
+  /* A clip a gyerekeken van: egy teljesen levágott elemet az IntersectionObserver
+     láthatatlannak tekintene, így soha nem indulna el az animáció. */
+  .js [data-reveal='clip']:not(.is-visible) {
+    opacity: 1;
+    translate: none;
+  }
+  .js [data-reveal='clip'] > * {
+    clip-path: inset(0 0 0 0);
+    transition: clip-path 1.3s cubic-bezier(0.7, 0, 0.2, 1);
+    transition-delay: var(--delay, 0ms);
+  }
+  .js [data-reveal='clip']:not(.is-visible) > * {
+    clip-path: inset(100% 0 0 0);
+  }
+}
+
+/* Narancs fény a hero videókártya mögött – lassan „lélegzik”, hoverre erősödik. */
+.glow-orange {
+  box-shadow:
+    0 0 0 1px rgb(255 106 0 / 0.25),
+    0 10px 50px -8px rgb(255 106 0 / 0.55);
+}
+.glow-orange:hover {
+  box-shadow:
+    0 0 0 1px rgb(255 106 0 / 0.5),
+    0 14px 70px -6px rgb(255 106 0 / 0.8);
+}
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 0 1px rgb(255 106 0 / 0.25), 0 10px 50px -8px rgb(255 106 0 / 0.5); }
+  50% { box-shadow: 0 0 0 1px rgb(255 106 0 / 0.4), 0 12px 70px -4px rgb(255 106 0 / 0.75); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .glow-orange:not(:hover) {
+    animation: glow-pulse 3.2s ease-in-out infinite;
+  }
+}

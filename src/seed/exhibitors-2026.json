@@ -1,0 +1,584 @@
+[
+  {
+    "name": "Admira",
+    "exhibitor": "Hangszerarzenál",
+    "website": "https://hangszerarzenal.hu/22-gitarok/s-1/gyartok-admira",
+    "logo": "admira.jpg"
+  },
+  {
+    "name": "Aguilar",
+    "exhibitor": "Musik Meyer",
+    "website": "https://www.musik-meyer.de/international/hu/",
+    "logo": "aguilar.jpg"
+  },
+  {
+    "name": "A.Martinez",
+    "exhibitor": null,
+    "website": null,
+    "logo": null
+  },
+  {
+    "name": "Arven Case",
+    "exhibitor": null,
+    "website": null,
+    "logo": null
+  },
+  {
+    "name": "Audient",
+    "exhibitor": "Audio-Technica",
+    "website": "https://www.audio-technica.com/hu-hu",
+    "logo": "audient.jpg"
+  },
+  {
+    "name": "Audio-Technica",
+    "exhibitor": null,
+    "website": "https://www.audio-technica.com/hu-hu",
+    "logo": "audio-technica.jpg"
+  },
+  {
+    "name": "Beetronics",
+    "exhibitor": "FACE",
+    "website": "https://www.face.be/brand/beetronics",
+    "logo": "beetronics.webp"
+  },
+  {
+    "name": "Blackstar",
+    "exhibitor": "Musik Meyer",
+    "website": "https://www.musik-meyer.de/international/hu/",
+    "logo": "blackstar.png"
+  },
+  {
+    "name": "Blasius",
+    "exhibitor": null,
+    "website": null,
+    "logo": null
+  },
+  {
+    "name": "Bognar Electronics",
+    "exhibitor": null,
+    "website": "https://bognarelectronics.com/hu/",
+    "logo": "bognar-electronics.png"
+  },
+  {
+    "name": "Boldogh",
+    "exhibitor": "Route 51 Guitars",
+    "website": "https://route51guitars.com/hangszerkeszitok/boldogh-guitars",
+    "logo": "boldogh.png"
+  },
+  {
+    "name": "Boss",
+    "exhibitor": "Roland",
+    "website": "https://www.boss.info/global/",
+    "logo": "boss.png"
+  },
+  {
+    "name": "Bromo",
+    "exhibitor": "Elitmusic",
+    "website": "https://elitmusic.hu/",
+    "logo": "bromo.jpg"
+  },
+  {
+    "name": "Cort",
+    "exhibitor": "Forte Music",
+    "website": "https://forte.hu/",
+    "logo": "cort.jpg"
+  },
+  {
+    "name": "Craftsman by MT",
+    "exhibitor": "Medgyesi Hangszercenter és Gitárklinika",
+    "website": "https://hangszercenter.hu/",
+    "logo": "craftsman-by-mt.png"
+  },
+  {
+    "name": "Crazy Tube Circuits",
+    "exhibitor": "FACE",
+    "website": "https://www.face.be/brand/crazy-tube-circuits",
+    "logo": "crazy-tube-circuits.png"
+  },
+  {
+    "name": "Curly Fingers",
+    "exhibitor": null,
+    "website": "https://www.facebook.com/curlyfinger",
+    "logo": "curly-fingers.jpg"
+  },
+  {
+    "name": "D'Angelico",
+    "exhibitor": "SelectGuitars",
+    "website": "https://selectguitars.eu/",
+    "logo": "d-angelico.png"
+  },
+  {
+    "name": "David Tuba Straps",
+    "exhibitor": null,
+    "website": "https://www.davidtubaguitarstraps.com/",
+    "logo": "david-tuba-straps.png"
+  },
+  {
+    "name": "DigiTech",
+    "exhibitor": "Musik Meyer",
+    "website": "https://www.musik-meyer.de/international/hu/",
+    "logo": "digitech.webp"
+  },
+  {
+    "name": "Divitone",
+    "exhibitor": "Forte Music",
+    "website": "https://forte.hu/",
+    "logo": "divitone.jpg"
+  },
+  {
+    "name": "Donner",
+    "exhibitor": null,
+    "website": null,
+    "logo": null
+  },
+  {
+    "name": "Dowina",
+    "exhibitor": null,
+    "website": "https://www.dowina.com/",
+    "logo": "dowina.png"
+  },
+  {
+    "name": "Dunlop",
+    "exhibitor": "Wavemusic",
+    "website": "https://wavemusic.hu/spl/328701/Effekt-pedalok",
+    "logo": "dunlop.webp"
+  },
+  {
+    "name": "Elixir",
+    "exhibitor": "Medgyesi Hangszercenter és Gitárklinika",
+    "website": "https://hangszercenter.hu/",
+    "logo": "elixir.png"
+  },
+  {
+    "name": "Erhard Guitars",
+    "exhibitor": "Route 51 Guitars",
+    "website": "https://route51guitars.com/hangszerkeszitok/erhard-handmade-instruments",
+    "logo": "erhard-guitars.png"
+  },
+  {
+    "name": "FGN",
+    "exhibitor": "Musik Meyer",
+    "website": "https://www.musik-meyer.de/international/hu/",
+    "logo": "fgn.webp"
+  },
+  {
+    "name": "Fibenare",
+    "exhibitor": null,
+    "website": "https://fibenare-guitars.org/",
+    "logo": "fibenare.png"
+  },
+  {
+    "name": "Floyd Rose",
+    "exhibitor": "Medgyesi Hangszercenter és Gitárklinika",
+    "website": "https://hangszercenter.hu/",
+    "logo": "floyd-rose.png"
+  },
+  {
+    "name": "Gator",
+    "exhibitor": "Eurhythmics",
+    "website": "https://eurhythmics.hu/hu/",
+    "logo": "gator.png"
+  },
+  {
+    "name": "Goldschmidt",
+    "exhibitor": null,
+    "website": "https://gaborgoldschmidt.com/",
+    "logo": "goldschmidt.jpg"
+  },
+  {
+    "name": "Gotoh",
+    "exhibitor": "Medgyesi Hangszercenter és Gitárklinika",
+    "website": "https://hangszercenter.hu/",
+    "logo": "gotoh.png"
+  },
+  {
+    "name": "Guitars for C.A.T.",
+    "exhibitor": null,
+    "website": "https://guitarsforcat.com/",
+    "logo": "guitars-for-c-a-t.png"
+  },
+  {
+    "name": "Hagstrom",
+    "exhibitor": "Musik Meyer",
+    "website": "https://www.musik-meyer.de/international/hu/",
+    "logo": "hagstrom.jpg"
+  },
+  {
+    "name": "Headrush",
+    "exhibitor": "Eurhythmics",
+    "website": "https://eurhythmics.hu/hu/",
+    "logo": "headrush.png"
+  },
+  {
+    "name": "Henry's",
+    "exhibitor": null,
+    "website": "https://www.henrysmusic.com/hu",
+    "logo": "henry-s.png"
+  },
+  {
+    "name": "Hercules",
+    "exhibitor": "Eurhythmics",
+    "website": "https://eurhythmics.hu/hu/",
+    "logo": "hercules.webp"
+  },
+  {
+    "name": "Heritage",
+    "exhibitor": "SelectGuitars",
+    "website": "https://selectguitars.eu/elektromos-gitar?brand=70",
+    "logo": "heritage.png"
+  },
+  {
+    "name": "Hotone",
+    "exhibitor": "Forte Music",
+    "website": "https://forte.hu/",
+    "logo": "hotone.png"
+  },
+  {
+    "name": "Ibanez",
+    "exhibitor": null,
+    "website": "https://www.ibanez.com/eu/",
+    "logo": "ibanez.jpg"
+  },
+  {
+    "name": "James Tyler",
+    "exhibitor": "SelectGuitars",
+    "website": "https://selectguitars.eu/elektromos-gitar?brand=76",
+    "logo": "james-tyler.webp"
+  },
+  {
+    "name": "Jet Guitars",
+    "exhibitor": "Music-Max",
+    "website": "https://musicmax.si/kitare/elektricne-kitare/Jet/",
+    "logo": "jet-guitars.png"
+  },
+  {
+    "name": "J. Rockett Audio Designs",
+    "exhibitor": "FACE",
+    "website": "https://www.face.be/brand/j-rockett-audio-designs",
+    "logo": "j-rockett-audio-designs.webp"
+  },
+  {
+    "name": "Kemper",
+    "exhibitor": "Audmax",
+    "website": "https://audmax.hu/gyartok/vox",
+    "logo": "kemper.png"
+  },
+  {
+    "name": "Kepma",
+    "exhibitor": "SelectGuitars",
+    "website": "https://selectguitars.eu/",
+    "logo": "kepma.png"
+  },
+  {
+    "name": "Kitsune Guitar Picks",
+    "exhibitor": null,
+    "website": "https://kitsuneguitarpicks.com/",
+    "logo": "kitsune-guitar-picks.png"
+  },
+  {
+    "name": "Korg",
+    "exhibitor": "Audmax",
+    "website": "https://audmax.hu/gyartok/korg",
+    "logo": "korg.jpg"
+  },
+  {
+    "name": "Laney",
+    "exhibitor": null,
+    "website": null,
+    "logo": null
+  },
+  {
+    "name": "Magneto",
+    "exhibitor": "Forte Music",
+    "website": "https://forte.hu/",
+    "logo": "magneto.png"
+  },
+  {
+    "name": "Mahalo",
+    "exhibitor": "Elitmusic",
+    "website": "https://elitmusic.hu/",
+    "logo": "mahalo.png"
+  },
+  {
+    "name": "Marris",
+    "exhibitor": "Dowina Guitars",
+    "website": "https://www.dowina.com/",
+    "logo": "marris.jpg"
+  },
+  {
+    "name": "Matt Custom Guitars",
+    "exhibitor": null,
+    "website": "https://www.mattcustomguitars.com/",
+    "logo": "matt-custom-guitars.jpg"
+  },
+  {
+    "name": "Mooer",
+    "exhibitor": "Hangszerarzenál",
+    "website": "https://hangszerarzenal.hu/12-gitar/s-1/gyartok-mooer",
+    "logo": "mooer.png"
+  },
+  {
+    "name": "MusicNomad",
+    "exhibitor": "Hangszerarzenál",
+    "website": "https://hangszerarzenal.hu/12-gitar/s-1/gyartok-musicnomad",
+    "logo": "musicnomad.jpg"
+  },
+  {
+    "name": "M-VAVE",
+    "exhibitor": "Medgyesi Hangszercenter és Gitárklinika",
+    "website": "https://hangszercenter.hu/",
+    "logo": "m-vave.png"
+  },
+  {
+    "name": "MXR",
+    "exhibitor": "Wavemusic",
+    "website": "https://wavemusic.hu/spl/328701/Effekt-pedalok",
+    "logo": "mxr.png"
+  },
+  {
+    "name": "Nashville",
+    "exhibitor": "Elitmusic",
+    "website": "https://elitmusic.hu/",
+    "logo": "nashville.png"
+  },
+  {
+    "name": "Neural DSP",
+    "exhibitor": "SelectGuitars",
+    "website": "https://selectguitars.eu/",
+    "logo": "neural-dsp.png"
+  },
+  {
+    "name": "Nokkel Pickups",
+    "exhibitor": null,
+    "website": null,
+    "logo": null
+  },
+  {
+    "name": "Novo Guitars",
+    "exhibitor": "SelectGuitars",
+    "website": "https://selectguitars.eu/elektromos-gitar?brand=79",
+    "logo": "novo-guitars.webp"
+  },
+  {
+    "name": "NUX",
+    "exhibitor": "Music-Max",
+    "website": "https://musicmax.si/kitare/efekti-za-kitaro-in-bas/",
+    "logo": "nux.png"
+  },
+  {
+    "name": "Ortega",
+    "exhibitor": null,
+    "website": "https://ortegaguitars.com/en/home",
+    "logo": "ortega.jpg"
+  },
+  {
+    "name": "Panda Audio",
+    "exhibitor": null,
+    "website": "https://www.panda-audio.com/",
+    "logo": "panda-audio.jpg"
+  },
+  {
+    "name": "Paoletti",
+    "exhibitor": "SelectGuitars",
+    "website": "https://selectguitars.eu/",
+    "logo": "paoletti.png"
+  },
+  {
+    "name": "Peavey",
+    "exhibitor": "FACE",
+    "website": "https://www.face.be/brand/peavey",
+    "logo": "peavey.jpg"
+  },
+  {
+    "name": "Pedaltrain",
+    "exhibitor": "FACE",
+    "website": "https://www.face.be/brand/pedaltrain",
+    "logo": "pedaltrain.webp"
+  },
+  {
+    "name": "Peter Crow Design",
+    "exhibitor": "Route 51 Guitars",
+    "website": "https://route51guitars.com/hangszerkeszitok/peter-crow-design",
+    "logo": "peter-crow-design.png"
+  },
+  {
+    "name": "Prieger Custom Guitars",
+    "exhibitor": "Route 51 Guitars",
+    "website": "https://route51guitars.com/hangszerkeszitok/prieger",
+    "logo": "prieger-custom-guitars.jpg"
+  },
+  {
+    "name": "PRS",
+    "exhibitor": "Medgyesi Hangszercenter és Gitárklinika",
+    "website": "https://hangszercenter.hu/",
+    "logo": "prs.jpeg"
+  },
+  {
+    "name": "Radial Engineering",
+    "exhibitor": "FACE",
+    "website": "https://www.face.be/brand/radial",
+    "logo": "radial-engineering.png"
+  },
+  {
+    "name": "Richwood",
+    "exhibitor": "Elitmusic",
+    "website": "https://elitmusic.hu/",
+    "logo": "richwood.png"
+  },
+  {
+    "name": "Roland",
+    "exhibitor": null,
+    "website": null,
+    "logo": null
+  },
+  {
+    "name": "Rotosound",
+    "exhibitor": "Eurhythmics",
+    "website": "https://eurhythmics.hu/hu/",
+    "logo": "rotosound.webp"
+  },
+  {
+    "name": "Route51",
+    "exhibitor": null,
+    "website": null,
+    "logo": null
+  },
+  {
+    "name": "Sadowsky",
+    "exhibitor": "Eurhythmics",
+    "website": "https://eurhythmics.hu/hu/",
+    "logo": "sadowsky.png"
+  },
+  {
+    "name": "Salvador Cortez",
+    "exhibitor": "Elitmusic",
+    "website": "https://elitmusic.hu/",
+    "logo": "salvador-cortez.png"
+  },
+  {
+    "name": "Schecter",
+    "exhibitor": "Hangszerarzenál",
+    "website": "https://hangszerarzenal.hu/28-elektromos/s-1/gyartok-schecter",
+    "logo": "schecter.jpg"
+  },
+  {
+    "name": "sE Electronics",
+    "exhibitor": "Hangszerarzenál",
+    "website": "https://hangszerarzenal.hu/17-mikrofon/s-1/gyartok-se_electronics",
+    "logo": "se-electronics.jpg"
+  },
+  {
+    "name": "Seymour Duncan",
+    "exhibitor": "Medgyesi Hangszercenter és Gitárklinika",
+    "website": "https://hangszercenter.hu/",
+    "logo": "seymour-duncan.png"
+  },
+  {
+    "name": "Shure",
+    "exhibitor": "Eurhythmics",
+    "website": "https://eurhythmics.hu/hu/",
+    "logo": "shure.png"
+  },
+  {
+    "name": "Solar Guitars",
+    "exhibitor": null,
+    "website": null,
+    "logo": null
+  },
+  {
+    "name": "Spector",
+    "exhibitor": "Musik Meyer",
+    "website": "https://www.musik-meyer.de/international/hu/",
+    "logo": "spector.png"
+  },
+  {
+    "name": "Spira Guitars",
+    "exhibitor": "Music-Max",
+    "website": "https://musicmax.si/kitare/elektricne-kitare/Spira/",
+    "logo": "spira-guitars.png"
+  },
+  {
+    "name": "Stagg",
+    "exhibitor": "Hangszerarzenál",
+    "website": "https://hangszerarzenal.hu/28-elektromos/s-1/gyartok-stagg",
+    "logo": "stagg.jpg"
+  },
+  {
+    "name": "SX",
+    "exhibitor": "Elitmusic",
+    "website": "https://elitmusic.hu/",
+    "logo": "sx.png"
+  },
+  {
+    "name": "Taylor",
+    "exhibitor": null,
+    "website": "https://www.taylorguitars.com/",
+    "logo": "taylor.jpg"
+  },
+  {
+    "name": "Universal Audio",
+    "exhibitor": "HIT Space",
+    "website": "https://www.hitspace.hu/en/shop?attribute_value=1128-4898",
+    "logo": "universal-audio.svg"
+  },
+  {
+    "name": "Valencia",
+    "exhibitor": "Elitmusic",
+    "website": "https://elitmusic.hu/",
+    "logo": "valencia.png"
+  },
+  {
+    "name": "Valeton",
+    "exhibitor": "Forte Music",
+    "website": "https://forte.hu/keres/&term=valeton",
+    "logo": "valeton.png"
+  },
+  {
+    "name": "Victory Amps",
+    "exhibitor": "SelectGuitars",
+    "website": "https://selectguitars.eu/",
+    "logo": "victory-amps.jpg"
+  },
+  {
+    "name": "Vintage",
+    "exhibitor": "Wavemusic",
+    "website": "https://wavemusic.hu/sct/799226/VINTAGE-gitarok",
+    "logo": "vintage.webp"
+  },
+  {
+    "name": "Vox",
+    "exhibitor": "Audmax",
+    "website": "https://audmax.hu/gyartok/vox",
+    "logo": "vox.jpg"
+  },
+  {
+    "name": "Walrus Audio",
+    "exhibitor": "FACE",
+    "website": "https://www.face.be/brand/walrus-audio",
+    "logo": "walrus-audio.webp"
+  },
+  {
+    "name": "Warwick",
+    "exhibitor": "Eurhythmics",
+    "website": "https://eurhythmics.hu/hu/",
+    "logo": "warwick.png"
+  },
+  {
+    "name": "Way Huge",
+    "exhibitor": "Wavemusic",
+    "website": "https://wavemusic.hu/spl/328701/Effekt-pedalok?infinite_page=4",
+    "logo": "way-huge.png"
+  },
+  {
+    "name": "Wylde Audio",
+    "exhibitor": "Hangszerarzenál",
+    "website": "https://hangszerarzenal.hu/12-gitar/s-1/gyartok-wylde_audio",
+    "logo": "wylde-audio.jpg"
+  },
+  {
+    "name": "Xotic",
+    "exhibitor": "SelectGuitars",
+    "website": "https://selectguitars.eu/elektromos-gitar?brand=20",
+    "logo": "xotic.jpg"
+  }
+]
