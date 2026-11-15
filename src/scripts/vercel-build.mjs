@@ -45,7 +45,12 @@ if (env.VERCEL_ENV === 'production') {
     process.exit(1)
   }
   // A Blob token csak futás közben kell (képfeltöltés/-kiszolgálás), a buildhez nem → csak figyelmeztetünk.
-  if (!(env.BLOB_READ_WRITE_TOKEN ?? '').startsWith('vercel_blob_rw_')) {
+  const blob = (env.BLOB_READ_WRITE_TOKEN ?? '').trim()
+  if (blob && !/^vercel_blob_rw_[a-z\d]+_[a-z\d]+$/i.test(blob)) {
+    console.warn(
+      '! BLOB_READ_WRITE_TOKEN formátuma gyanús (idézőjel? szóköz?). Helyesen: vercel_blob_rw_<store>_<kulcs>, idézőjel nélkül.',
+    )
+  } else if (!blob) {
     console.warn(
       '! BLOB_READ_WRITE_TOKEN nem látszik a build alatt. Ellenőrizd: Storage → Blob tárhely → Projects → a Production környezet be van-e pipálva.',
     )

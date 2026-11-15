@@ -27,6 +27,16 @@ const dirname = path.dirname(filename)
 const databaseUrl = process.env.DATABASE_URL || 'file:./bgs.db'
 const serverURL = process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000'
 
+// Vercel Blob token: idézőjel / szóköz nélkül. Hibás formátumnál a tárhely kikapcsol (az oldal működik tovább),
+// ahelyett hogy az egész oldal 500-as hibára futna.
+const rawBlobToken = (process.env.BLOB_READ_WRITE_TOKEN || '').trim().replace(/^["']|["']$/g, '')
+const blobToken = /^vercel_blob_rw_[a-z\d]+_[a-z\d]+$/i.test(rawBlobToken) ? rawBlobToken : ''
+if (rawBlobToken && !blobToken) {
+  console.error(
+    '[Vercel Blob] A BLOB_READ_WRITE_TOKEN formátuma hibás (vercel_blob_rw_<store>_<kulcs> kell) – a fájltárhely kikapcsolva.',
+  )
+}
+
 if (process.env.NODE_ENV === 'production' && (process.env.PAYLOAD_SECRET || '').length < 32) {
   throw new Error('PAYLOAD_SECRET hiányzik vagy túl rövid (legalább 32 karakter kell).')
 }
@@ -104,21 +114,21 @@ export default buildConfig({
   plugins: [
     // Éles környezetben (Vercel) a képek a Vercel Blob tárhelyre kerülnek.
     vercelBlobStorage({
-      enabled: Boolean(process.env.BLOB_READ_WRITE_TOKEN),
+      enabled: Boolean(blobToken),
       // A séma ne függjön attól, be van-e állítva a token (helyben nincs, élesben van).
       alwaysInsertFields: true,
       collections: { media: true },
-      token: process.env.BLOB_READ_WRITE_TOKEN || '',
+      token: blobToken,
     }),
     // Jelentkezői logók és szerződések: a letöltést a Payload jogosultsága védi (/api/.../file/…),
     // a Blobon pedig véletlen utótagot kapnak, így a közvetlen cím nem kitalálható.
     vercelBlobStorage({
-      enabled: Boolean(process.env.BLOB_READ_WRITE_TOKEN),
+      enabled: Boolean(blobToken),
       // A séma ne függjön attól, be van-e állítva a token (helyben nincs, élesben van).
       alwaysInsertFields: true,
       collections: { 'application-logos': true, 'application-documents': true },
       addRandomSuffix: true,
-      token: process.env.BLOB_READ_WRITE_TOKEN || '',
+      token: blobToken,
     }),
   ],
 })
