@@ -25,11 +25,6 @@ const required = [
     (v) => /^https?:\/\//.test(v),
     'az oldal címe, pl. https://budapestguitarshow.com',
   ],
-  [
-    'BLOB_READ_WRITE_TOKEN',
-    (v) => v.startsWith('vercel_blob_rw_'),
-    'Storage → Blob tárhely a projekthez kötve',
-  ],
 ]
 // Ajánlott változók – nélkülük az oldal működik, de egy funkció kimarad.
 const optional = [
@@ -48,6 +43,12 @@ if (env.VERCEL_ENV === 'production') {
       console.error(`   ${k.padEnd(24)} ${env[k] ? '(hibás érték)' : '(hiányzik)'}  – ${hint}`)
     console.error('\n   Beállítás után: Deployments → ⋯ → Redeploy.\n')
     process.exit(1)
+  }
+  // A Blob token csak futás közben kell (képfeltöltés/-kiszolgálás), a buildhez nem → csak figyelmeztetünk.
+  if (!(env.BLOB_READ_WRITE_TOKEN ?? '').startsWith('vercel_blob_rw_')) {
+    console.warn(
+      '! BLOB_READ_WRITE_TOKEN nem látszik a build alatt. Ellenőrizd: Storage → Blob tárhely → Projects → a Production környezet be van-e pipálva.',
+    )
   }
   for (const [keys, what] of optional) {
     const missing = keys.filter((k) => !env[k])
