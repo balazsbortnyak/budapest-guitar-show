@@ -54,3 +54,6 @@ node_modules/
 # helyi SQLite adatbázis
 *.db
 *.db-journal
+
+# Vercel környezeti változók (titkos, csak bemásoláshoz)
+/vercel.env
