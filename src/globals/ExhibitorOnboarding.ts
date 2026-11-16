@@ -13,7 +13,13 @@ const step = (name: string, label: string): Field => ({
       type: 'row',
       fields: [
         { name: 'heading', type: 'text', label: 'Cím', localized: true, admin: { width: '50%' } },
-        { name: 'text', type: 'textarea', label: 'Leírás', localized: true, admin: { width: '50%', rows: 2 } },
+        {
+          name: 'text',
+          type: 'textarea',
+          label: 'Leírás',
+          localized: true,
+          admin: { width: '50%', rows: 2 },
+        },
       ],
     },
   ],
@@ -29,6 +35,45 @@ export const ExhibitorOnboarding: GlobalConfig = {
   access: { read: anyone, update: loggedIn },
   hooks: { afterChange: [revalidateGlobal] },
   fields: [
+    {
+      type: 'collapsible',
+      label: 'Jelentkezés állapota',
+      fields: [
+        {
+          name: 'applicationsOpen',
+          type: 'checkbox',
+          label: 'A jelentkezés nyitva van',
+          defaultValue: false,
+          admin: {
+            description:
+              'Kikapcsolva a „Kiállítóként jelentkezem” gombok egy felugró ablakot nyitnak az alábbi szöveggel, a jelentkezési oldal pedig nem fogad jelentkezést.',
+          },
+        },
+        {
+          type: 'row',
+          fields: [
+            {
+              name: 'closedTitle',
+              type: 'text',
+              label: 'Felugró ablak címe (ha zárva)',
+              localized: true,
+              admin: { width: '50%', placeholder: 'A kiállítói jelentkezés hamarosan indul' },
+            },
+            {
+              name: 'closedText',
+              type: 'textarea',
+              label: 'Felugró ablak szövege (ha zárva)',
+              localized: true,
+              admin: {
+                width: '50%',
+                rows: 3,
+                description: 'Üresen hagyva az alapértelmezett szöveg jelenik meg.',
+              },
+            },
+          ],
+        },
+      ],
+    },
     {
       type: 'tabs',
       tabs: [
@@ -46,7 +91,13 @@ export const ExhibitorOnboarding: GlobalConfig = {
                   localized: true,
                   admin: { rows: 2, description: 'Új sorba írt rész narancs színnel jelenik meg.' },
                 },
-                { name: 'intro', type: 'textarea', label: 'Bevezető', localized: true, admin: { rows: 2 } },
+                {
+                  name: 'intro',
+                  type: 'textarea',
+                  label: 'Bevezető',
+                  localized: true,
+                  admin: { rows: 2 },
+                },
               ],
             },
             {
@@ -65,8 +116,21 @@ export const ExhibitorOnboarding: GlobalConfig = {
                     {
                       type: 'row',
                       fields: [
-                        { name: 'value', type: 'text', label: 'Szám (pl. 2500+)', required: true, admin: { width: '40%' } },
-                        { name: 'label', type: 'text', label: 'Felirat', required: true, localized: true, admin: { width: '60%' } },
+                        {
+                          name: 'value',
+                          type: 'text',
+                          label: 'Szám (pl. 2500+)',
+                          required: true,
+                          admin: { width: '40%' },
+                        },
+                        {
+                          name: 'label',
+                          type: 'text',
+                          label: 'Felirat',
+                          required: true,
+                          localized: true,
+                          admin: { width: '60%' },
+                        },
                       ],
                     },
                   ],
@@ -103,8 +167,18 @@ export const ExhibitorOnboarding: GlobalConfig = {
                   localized: true,
                   admin: { rows: 2 },
                 },
-                { name: 'successHeading', type: 'text', label: 'Sikeres beküldés – cím', localized: true },
-                { name: 'successText', type: 'textarea', label: 'Sikeres beküldés – szöveg', localized: true },
+                {
+                  name: 'successHeading',
+                  type: 'text',
+                  label: 'Sikeres beküldés – cím',
+                  localized: true,
+                },
+                {
+                  name: 'successText',
+                  type: 'textarea',
+                  label: 'Sikeres beküldés – szöveg',
+                  localized: true,
+                },
               ],
             },
           ],
@@ -122,12 +196,31 @@ export const ExhibitorOnboarding: GlobalConfig = {
                   'A stand mérete alapján automatikusan választódik ki. Egy kategória a „Mérettől” (ezt is beleértve) a „Méretig” (ezt már nem) tart; az utolsónál a „Méretig” üresen hagyható.',
               },
               fields: [
-                { name: 'label', type: 'text', label: 'Név (pl. Kis stand)', localized: true, required: true },
+                {
+                  name: 'label',
+                  type: 'text',
+                  label: 'Név (pl. Kis stand)',
+                  localized: true,
+                  required: true,
+                },
                 {
                   type: 'row',
                   fields: [
-                    { name: 'minArea', type: 'number', label: 'Mérettől (m²)', required: true, min: 0, admin: { width: '25%' } },
-                    { name: 'maxArea', type: 'number', label: 'Méretig (m²)', min: 0, admin: { width: '25%' } },
+                    {
+                      name: 'minArea',
+                      type: 'number',
+                      label: 'Mérettől (m²)',
+                      required: true,
+                      min: 0,
+                      admin: { width: '25%' },
+                    },
+                    {
+                      name: 'maxArea',
+                      type: 'number',
+                      label: 'Méretig (m²)',
+                      min: 0,
+                      admin: { width: '25%' },
+                    },
                     {
                       name: 'pricePerSqm',
                       type: 'number',
@@ -141,9 +234,30 @@ export const ExhibitorOnboarding: GlobalConfig = {
                 {
                   type: 'row',
                   fields: [
-                    { name: 'badges', type: 'number', label: 'Kiállítói badge (db)', min: 0, defaultValue: 0, admin: { width: '33%' } },
-                    { name: 'tickets', type: 'number', label: 'Belépő (db)', min: 0, defaultValue: 0, admin: { width: '33%' } },
-                    { name: 'parking', type: 'number', label: 'Parkoló (db)', min: 0, defaultValue: 0, admin: { width: '34%' } },
+                    {
+                      name: 'badges',
+                      type: 'number',
+                      label: 'Kiállítói badge (db)',
+                      min: 0,
+                      defaultValue: 0,
+                      admin: { width: '33%' },
+                    },
+                    {
+                      name: 'tickets',
+                      type: 'number',
+                      label: 'Belépő (db)',
+                      min: 0,
+                      defaultValue: 0,
+                      admin: { width: '33%' },
+                    },
+                    {
+                      name: 'parking',
+                      type: 'number',
+                      label: 'Parkoló (db)',
+                      min: 0,
+                      defaultValue: 0,
+                      admin: { width: '34%' },
+                    },
                   ],
                 },
                 {
@@ -158,9 +272,34 @@ export const ExhibitorOnboarding: GlobalConfig = {
             {
               type: 'row',
               fields: [
-                { name: 'vatRate', type: 'number', label: 'ÁFA (%)', required: true, defaultValue: 27, min: 0, max: 100, admin: { width: '33%' } },
-                { name: 'minSide', type: 'number', label: 'Stand oldala legalább (m)', required: true, defaultValue: 2, min: 1, admin: { width: '33%' } },
-                { name: 'maxSide', type: 'number', label: 'Stand oldala legfeljebb (m)', required: true, defaultValue: 20, min: 1, admin: { width: '34%' } },
+                {
+                  name: 'vatRate',
+                  type: 'number',
+                  label: 'ÁFA (%)',
+                  required: true,
+                  defaultValue: 27,
+                  min: 0,
+                  max: 100,
+                  admin: { width: '33%' },
+                },
+                {
+                  name: 'minSide',
+                  type: 'number',
+                  label: 'Stand oldala legalább (m)',
+                  required: true,
+                  defaultValue: 2,
+                  min: 1,
+                  admin: { width: '33%' },
+                },
+                {
+                  name: 'maxSide',
+                  type: 'number',
+                  label: 'Stand oldala legfeljebb (m)',
+                  required: true,
+                  defaultValue: 20,
+                  min: 1,
+                  admin: { width: '34%' },
+                },
               ],
             },
           ],
@@ -177,8 +316,23 @@ export const ExhibitorOnboarding: GlobalConfig = {
                 {
                   type: 'row',
                   fields: [
-                    { name: 'label', type: 'text', label: 'Megnevezés', localized: true, required: true, admin: { width: '60%' } },
-                    { name: 'price', type: 'number', label: 'Nettó egységár (Ft)', required: true, min: 0, defaultValue: 0, admin: { width: '40%' } },
+                    {
+                      name: 'label',
+                      type: 'text',
+                      label: 'Megnevezés',
+                      localized: true,
+                      required: true,
+                      admin: { width: '60%' },
+                    },
+                    {
+                      name: 'price',
+                      type: 'number',
+                      label: 'Nettó egységár (Ft)',
+                      required: true,
+                      min: 0,
+                      defaultValue: 0,
+                      admin: { width: '40%' },
+                    },
                   ],
                 },
                 {
@@ -217,7 +371,13 @@ export const ExhibitorOnboarding: GlobalConfig = {
                 {
                   type: 'row',
                   fields: [
-                    { name: 'description', type: 'text', label: 'Rövid leírás (opcionális)', localized: true, admin: { width: '60%' } },
+                    {
+                      name: 'description',
+                      type: 'text',
+                      label: 'Rövid leírás (opcionális)',
+                      localized: true,
+                      admin: { width: '60%' },
+                    },
                     {
                       name: 'variants',
                       type: 'text',

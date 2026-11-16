@@ -2,7 +2,7 @@
 import React from 'react'
 
 import type { Media } from '@/payload-types'
-import { mediaUrl } from '@/lib/media'
+import { mediaSrcSet, mediaUrl } from '@/lib/media'
 
 const isDev = process.env.NODE_ENV !== 'production'
 
@@ -21,6 +21,7 @@ export function Photo({
   className = '',
   priority = false,
   overlay = false,
+  sizes,
 }: {
   media: Media | null
   size?: 'card' | 'large' | 'hero'
@@ -28,13 +29,22 @@ export function Photo({
   className?: string
   priority?: boolean
   overlay?: boolean
+  /** Mekkora helyen jelenik meg a kép (HTML `sizes`), alapból a teljes képernyőszélesség. */
+  sizes?: string
 }) {
   const src = mediaUrl(media, size)
   if (src) {
     const opacity = Math.min(Math.max(media?.overlay ?? DEFAULT_OVERLAY, 0), 100) / 100
     return (
       <>
-        <PhotoImg src={src} media={media} className={className} priority={priority} />
+        <PhotoImg
+          src={src}
+          srcSet={mediaSrcSet(media, size)}
+          sizes={sizes ?? (size === 'card' ? '(min-width: 1024px) 25vw, 66vw' : '100vw')}
+          media={media}
+          className={className}
+          priority={priority}
+        />
         {overlay && opacity > 0 ? (
           <div aria-hidden="true" className="absolute inset-0 bg-black" style={{ opacity }} />
         ) : null}
@@ -52,11 +62,28 @@ export function Photo({
   )
 }
 
-function PhotoImg({ src, media, className, priority }: { src: string; media: Media | null; className: string; priority: boolean }) {
+function PhotoImg({
+  src,
+  srcSet,
+  sizes,
+  media,
+  className,
+  priority,
+}: {
+  src: string
+  srcSet?: string
+  sizes: string
+  media: Media | null
+  className: string
+  priority: boolean
+}) {
   return (
     <img
       src={src}
+      srcSet={srcSet}
+      sizes={srcSet ? sizes : undefined}
       alt={media?.alt ?? ''}
+      decoding="async"
       loading={priority ? 'eager' : 'lazy'}
       fetchPriority={priority ? 'high' : undefined}
       className={`absolute inset-0 h-full w-full object-cover ${className}`}
@@ -69,9 +96,17 @@ function PhotoImg({ src, media, className, priority }: { src: string; media: Med
   )
 }
 
-export function Eyebrow({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+export function Eyebrow({
+  children,
+  className = '',
+}: {
+  children: React.ReactNode
+  className?: string
+}) {
   return (
-    <p className={`flex items-center gap-2 font-mono text-[11px] tracking-[0.06em] uppercase ${className}`}>
+    <p
+      className={`flex items-center gap-2 font-mono text-[11px] tracking-[0.06em] uppercase ${className}`}
+    >
       <span aria-hidden="true" className="size-1.5 rounded-full bg-accent" />
       {children}
     </p>
@@ -80,16 +115,40 @@ export function Eyebrow({ children, className = '' }: { children: React.ReactNod
 
 export function ArrowRight({ className = 'size-3.5' }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
       <path d="M5 12h14M13 6l6 6-6 6" />
     </svg>
   )
 }
 
-export function Chevron({ dir = 'right', className = 'size-3' }: { dir?: 'left' | 'right' | 'down'; className?: string }) {
+export function Chevron({
+  dir = 'right',
+  className = 'size-3',
+}: {
+  dir?: 'left' | 'right' | 'down'
+  className?: string
+}) {
   const d = dir === 'left' ? 'M15 6l-6 6 6 6' : dir === 'down' ? 'M6 9l6 6 6-6' : 'M9 6l6 6-6 6'
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
       <path d={d} />
     </svg>
   )
@@ -117,7 +176,12 @@ export function FlagHU({ className = 'h-4 w-6' }: { className?: string }) {
 
 export function FlagGB({ className = 'h-4 w-6' }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <svg
+      className={className}
+      viewBox="0 0 60 30"
+      preserveAspectRatio="xMidYMid slice"
+      aria-hidden="true"
+    >
       <rect width="60" height="30" fill="#012169" />
       <path d="M0 0L60 30M60 0L0 30" stroke="#FFFFFF" strokeWidth="6" />
       <path d="M0 0L60 30M60 0L0 30" stroke="#C8102E" strokeWidth="2" />

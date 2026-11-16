@@ -896,6 +896,15 @@ export interface SiteSetting {
 export interface ExhibitorOnboarding {
   id: number;
   /**
+   * Kikapcsolva a „Kiállítóként jelentkezem” gombok egy felugró ablakot nyitnak az alábbi szöveggel, a jelentkezési oldal pedig nem fogad jelentkezést.
+   */
+  applicationsOpen?: boolean | null;
+  closedTitle?: string | null;
+  /**
+   * Üresen hagyva az alapértelmezett szöveg jelenik meg.
+   */
+  closedText?: string | null;
+  /**
    * Új sorba írt rész narancs színnel jelenik meg.
    */
   title?: string | null;
@@ -1014,6 +1023,9 @@ export interface SiteSettingsSelect<T extends boolean = true> {
  * via the `definition` "exhibitor-onboarding_select".
  */
 export interface ExhibitorOnboardingSelect<T extends boolean = true> {
+  applicationsOpen?: T;
+  closedTitle?: T;
+  closedText?: T;
   title?: T;
   intro?: T;
   welcomeHeading?: T;

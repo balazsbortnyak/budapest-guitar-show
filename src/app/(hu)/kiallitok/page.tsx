@@ -3,11 +3,13 @@ import type { Metadata } from 'next'
 import { ExhibitorsPage } from '@/components/ExhibitorsPage'
 import { getSiteData } from '@/lib/getSiteData'
 
-export const dynamic = 'force-dynamic'
+// Gyorsítótárazott oldal: admin-mentéskor azonnal frissül (src/hooks/revalidate.ts), tartalékként 5 percenként.
+export const revalidate = 300
 
 export const metadata: Metadata = {
   title: 'Kiállítók és márkák – Budapest Guitar Show',
-  description: 'A Budapest Guitar Show kiállítói és márkái – keress név szerint, és nézd meg, ki hozza őket.',
+  description:
+    'A Budapest Guitar Show kiállítói és márkái – keress név szerint, és nézd meg, ki hozza őket.',
   alternates: { languages: { hu: '/kiallitok', en: '/en/exhibitors' } },
 }
 

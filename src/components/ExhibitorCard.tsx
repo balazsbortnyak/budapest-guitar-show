@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react'
+import { ApplyButton, type ApplicationsClosed } from './ApplyButton'
 
 export type ExhibitorItem = {
   id: number | string
@@ -60,12 +61,15 @@ export function ExhibitorApplyBanner({
   heading,
   text,
   cta,
+  closed = null,
 }: {
   href: string
   eyebrow: string
   heading: string
   text: string
   cta: string
+  /** Ha a jelentkezés zárva van: a gomb felugró ablakot nyit. */
+  closed?: ApplicationsClosed | null
 }) {
   return (
     <div
@@ -86,8 +90,9 @@ export function ExhibitorApplyBanner({
         </h3>
         <p className="mt-3 text-[15px] leading-relaxed text-silver">{text}</p>
       </div>
-      <a
+      <ApplyButton
         href={href}
+        closed={closed}
         className="relative flex min-h-12 items-center gap-2 rounded-full bg-white px-6 text-sm font-semibold text-ink transition hover:bg-orange hover:text-white"
       >
         {cta}
@@ -103,7 +108,7 @@ export function ExhibitorApplyBanner({
         >
           <path d="M5 12h14M13 6l6 6-6 6" />
         </svg>
-      </a>
+      </ApplyButton>
     </div>
   )
 }

@@ -82,6 +82,8 @@ export async function submitExhibitorApplication(formData: FormData): Promise<Ap
 
   const payload = await getPayload({ config })
   const global = await payload.findGlobal({ slug: 'exhibitor-onboarding', locale })
+  // Ha a jelentkezés le van zárva (Payload kapcsoló), a szerver sem fogad be jelentkezést.
+  if (!global.applicationsOpen) return { status: 'error' }
   const cfg = toPricingConfig(global)
 
   const valid =

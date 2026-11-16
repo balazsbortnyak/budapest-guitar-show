@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react'
 
-import type { SiteData } from '@/lib/getSiteData'
+import { applyClosedInfo, type SiteData } from '@/lib/getSiteData'
 import { asMedia, mediaUrl } from '@/lib/media'
 import { dictionary, type Locale } from '@/lib/i18n'
 
@@ -262,7 +262,11 @@ export function Landing({ data, locale }: { data: SiteData; locale: Locale }) {
               data-reveal="clip"
               className="relative min-h-[480px] flex-[1_1_460px] overflow-hidden rounded-[10px] sm:min-h-[600px]"
             >
-              <Photo media={asMedia(s.pillarsImage)} hint="fellépő háttal, előtte a közönség" />
+              <Photo
+                media={asMedia(s.pillarsImage)}
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                hint="fellépő háttal, előtte a közönség"
+              />
             </div>
           </div>
         </section>
@@ -398,6 +402,7 @@ export function Landing({ data, locale }: { data: SiteData; locale: Locale }) {
               heading={t.exhibitors.applyHeading}
               text={t.exhibitors.applyText}
               cta={t.exhibitors.apply}
+              closed={applyClosedInfo(data, locale)}
             />
           </div>
         </section>

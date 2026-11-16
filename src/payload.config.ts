@@ -117,7 +117,9 @@ export default buildConfig({
       enabled: Boolean(blobToken),
       // A séma ne függjön attól, be van-e állítva a token (helyben nincs, élesben van).
       alwaysInsertFields: true,
-      collections: { media: true },
+      // A weboldal képei nyilvánosak → közvetlenül a Vercel Blob CDN-ről töltődnek (1 év gyorsítótár),
+      // nem a szerverfüggvényen keresztül. Ez sokkal gyorsabb.
+      collections: { media: { disablePayloadAccessControl: true } },
       token: blobToken,
     }),
     // Jelentkezői logók és szerződések: a letöltést a Payload jogosultsága védi (/api/.../file/…),

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import type { SiteData } from '@/lib/getSiteData'
+import { applyClosedInfo, type SiteData } from '@/lib/getSiteData'
 import { dictionary, type Locale } from '@/lib/i18n'
 import { asMedia, mediaUrl } from '@/lib/media'
 import { exhibitorApplyHref, paths } from '@/lib/routes'
@@ -96,6 +96,7 @@ export function ExhibitorsPage({ data, locale }: { data: SiteData; locale: Local
             heading={t.exhibitors.applyHeading}
             text={t.exhibitors.applyText}
             cta={t.exhibitors.apply}
+            closed={applyClosedInfo(data, locale)}
           />
         </div>
       </section>

@@ -5,9 +5,16 @@ import type {
   GlobalAfterChangeHook,
 } from 'payload'
 
+import { paths } from '../lib/routes'
+
+/** Minden nyilvános oldal frissítése (mindkét nyelv), hogy az admin módosítása azonnal látsszon. */
 const revalidateSite = () => {
   try {
     revalidatePath('/', 'layout')
+    for (const page of Object.values(paths)) {
+      revalidatePath(page.hu)
+      revalidatePath(page.en)
+    }
   } catch {
     // Seed scriptből / Next környezeten kívül futva nincs mit frissíteni.
   }
